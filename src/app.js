@@ -2,11 +2,28 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const products = require("./routes/products");
-const connectDB = require("../src/db/connect");
+const users = require("./routes/users");
+const sendPayment = require("./routes/sendPayment");
+const sendSMS = require("./routes/sendSMS");
+const connectDB = require("./config/connect");
+const passport = require("passport");
 const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
+require("./config/mail");
+
 const port = 3001;
+
+app.use(express.json());
+//Encode for form submit body
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+);
+//Passport initialize
+// require("./config/passport")(passport);
+// app.use(passport.initialize());
 app.use(
     cors({
         origin: "http://localhost:3000",
@@ -14,16 +31,11 @@ app.use(
 );
 app.use(express.static("src/static"));
 app.use(morgan("tiny"));
-//Encode for form submit body
-app.use(
-    express.urlencoded({
-        extended: false,
-    })
-);
-//Json parse
-app.use(express.json());
-//
 app.use("/products", products);
+app.use("/", users);
+app.use("/sendPayment", sendPayment);
+
+app.use("/sendSMS", sendSMS);
 
 const start = async () => {
     try {

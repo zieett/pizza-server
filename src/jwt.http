@@ -1,0 +1,29 @@
+POST http://localhost:3001/register
+content-type: application/json
+
+{
+    "userName": "viet123",
+    "password": "123"
+}
+
+###
+POST http://localhost:3001/login
+content-type: application/json
+
+{
+    "userName": "viet123",
+    "password": "123"
+}
+
+###
+GET http://localhost:3001/test
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmY0YjlkMjZlMjFkYTY5ZDlhYzhmM2YiLCJpYXQiOjE2NjAyMDg2MzQzMDQsImV4cCI6MTY2MDIwODcyMDcwNH0.KQKyVu7fbs5sYtmo1kyPUzTqnahKAJ0w7jjonP_47BzUavO-MMm5A1XABNaACpsSmq9-T4iUeXziVByu1CZ3KQSw9g9V6XzdRNxLn--7LrH_Z6c5ZFOI6Mh9fXEY7r2Og1nbRzVfXYSpNFSVpl98lFzBx_3eN20xG-HGLeGzb6waRbD5l02R5bgrtwO-9dybPuTa6Jt6yyZdIYdb7RmvBAMHXSizdGorusBTM1pYVJzlki058SZ9kpU3IW9P5LXQ7Sx2GeRL_wskGVFomC4BxKBoXyAXwn5aG-_F9xaC8sTlXj42ipT9wgwd7YZSZeAAoHVdSRajEH_9hgbsED57xZOzlxLt7aNTLFCHJJAuJ-ycJG8wrhzdFEiRgIvTlHJHqjHr3QAGU0fETaPzhKfhNxb9MMrIZW6b_35vphH-Xf6433Mz4cfBDpg3w3kg32t5cOSW25-KM1fkMWscZiitg_tBCwuQdDPvhEuiKIkolgiaKg9InNjF3IiRuqanM1yONYKVBEI-tqSo0aYTLCTNAn8uxZkUXUL7wkCfisdQR2rhKUMM-Qb2TnH7YcYBcoy0VaciZL-RA--YzpOvh9X_5qpA5k5VUEMFGvkqgRdIaXblBjwYuSfw01NT2yHV8gMZldY_VbrZjfJmSaRRFCNALwJlumIBMJ62AU8Y6qfG2o4
+
+###
+POST http://localhost:3001/sendSMS
+content-type: application/json
+
+{
+    "user": "name",
+    "pass":"Pass"
+}

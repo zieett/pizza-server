@@ -1,6 +1,7 @@
 const Pizza = require("../Models/Pizza");
 const Product = require("../Models/Product");
 const getAllProducts = async (req, res) => {
+    console.log(req.headers);
     try {
         const products = await Product.find({});
         res.json({ products });
