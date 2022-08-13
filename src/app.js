@@ -26,7 +26,7 @@ app.use(
 // app.use(passport.initialize());
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "*",
     })
 );
 app.use(express.static("src/static"));
