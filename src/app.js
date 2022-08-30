@@ -12,7 +12,7 @@ const path = require("path");
 require("dotenv").config();
 require("./config/mail");
 
-var port = server.listen(process.env.PORT || 3001);
+var port = process.env.PORT || 300;
 
 app.use(express.json());
 //Encode for form submit body
