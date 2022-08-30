@@ -12,7 +12,7 @@ const path = require("path");
 require("dotenv").config();
 require("./config/mail");
 
-const port = 3001;
+var port = server.listen(process.env.PORT || 3001);
 
 app.use(express.json());
 //Encode for form submit body
@@ -39,7 +39,9 @@ app.use("/sendSMS", sendSMS);
 
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI);
+        await connectDB(
+            "mongodb+srv://viet123:0989172935@pizza.cxasxu7.mongodb.net/Pizza-Store?retryWrites=true&w=majority"
+        );
         app.listen(port, () => {
             console.log(`Example app listening on port ${port}`);
         });
